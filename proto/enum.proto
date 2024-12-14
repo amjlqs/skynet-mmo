@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package enum;
+
+enum SystemID {
+    CMD_Base = 1;//玩家信息
+    CMD_Role = 2; //角色系统
+    CMD_Equip = 3; //装备背包系统
+    CMD_Skill = 4; //技能系统
+
+
+    CMD_Heart = 253;//心跳
+    CMD_ERROR = 254;//错误系统
+    CMD_Login = 255; //登录系统
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package proto;
+
+message LoginReq {
+  string openid = 1; //账号id
+  uint32 server = 2; //区服id
+}
+
+message LoginRsp {
+  uint64 uid = 1; //角色id
+  uint32 server = 2; //区服id
+}

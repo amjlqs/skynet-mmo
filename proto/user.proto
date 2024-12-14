@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package proto;
+
+message attrsDict {
+  int32 attrid = 1;//属性id
+  int32 level = 2;//属性等级
+}
+
+message equipsDict {
+  int32 pos = 1;//装备pos 
+  uint64 itemuid = 2;//物品uid
+}
+
+
+message skillInfo {
+    int32 pos = 1;//技能槽位pos 
+    uint64 skilluid = 2;//技能uid
+}
+
+message skillsDict {
+  repeated skillInfo skillpos = 1;//技能槽位
+  int32 holenum = 2;//开启的技能孔数
+  bool isuse = 3;//true正在使用 false未使用
+}
+
+
+//s->c玩家数据同步
+message userInfoSyn {
+  uint64 actorid = 1; // 玩家ID
+  string name = 2; // 角色名称
+  uint64 rtime = 3; // 注册时间
+  uint64 energy = 4; // 体力
+  uint64 coin = 5; // 金币
+  uint64 gold = 6; //元宝
+  string head = 7; //头像
+  uint64 totalpower = 8; //战斗力
+  int32 chapterid = 9; //章节id
+  int32 autobattle = 10; //是否开启自动战斗 默认0不开启 1开启
+
+  repeated attrsDict attrslist = 11;//属性列表 
+  repeated equipsDict equipslist = 12;//装备信息
+  repeated skillsDict skillslist = 13;//技能信息
+
+}
+
